@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define lld long long double
+
+/*#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;*/
+
+#define dbug(x) cout << #x << " " << x << "\n";
+#define loop(n) for(int i = 0; i < n; i++)
+#define loop2(n) for(int j = 0; j < m; j++)
+#define ve vector<ll>
+#define ft first
+#define imin INT_MIN
+#define imax INT_MAX
+#define st second
+#define pb push_back
+#define pob pop_back
+#define mpr make_pair
+#define mp map<ll, ll>
+#define fast ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define pr pair<ll, ll>
+#define all(c) (c).begin(), (c).end()
+#define EACH(x, a) for (auto& x: a)
+using namespace std;
+
+void solve(){
+    int n, m;
+    cin >> n >> m;
+    ve ar(n), arr(m);
+    loop(n){
+        cin >> ar[i];
+    }
+    loop(m){
+        cin >> arr[i];
+    }
+
+    //this is template of priority queue if you want the elements to be fixed in non decreasing order.
+    // By default the order of elements in priority queue is non increasing.
+    priority_queue<int, vector<int>, greater<int>> pq;
+
+    for(int i = 0; i < n; i++){
+        pq.push(ar[i]);
+    }
+
+    for(int i = 0; i < m; i++){
+        pq.push(arr[i]);
+    }
+
+    while(!pq.empty()){
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+}
+
+// Driver code
+int main(){
+    solve();
+        
+}
